@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,12 +43,14 @@ INSTALLED_APPS = [
     'customer',
     'inventory',
     'cart',
-    'vendor',
+    # 'vendor',
     'order',
     'stock',
     'payment',
     'reviews',
     'category',
+    'shipment',
+
     
   
 
@@ -65,6 +70,9 @@ ROOT_URLCONF = 'greenkiosk.urls'
 
 TEMPLATES = [
     {
+#          {
+# "DIRS": [os.path.join (BASE_DIR,"templates")],
+# }
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
@@ -78,6 +86,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'greenkiosk.wsgi.application'
 
@@ -133,3 +143,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
